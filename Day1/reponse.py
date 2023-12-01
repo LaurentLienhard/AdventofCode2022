@@ -2,16 +2,6 @@
 with open('puzzle.txt') as f:
     data = f.readlines()
 
-#read each line and find the first numeric character and the last numeric character. if they are only one numeric character, then the first and last are the same
-#add the numeric characters together and print the sum
-
-
-
-
-
-
-
-
 sum = 0
 for line in data:
     first_num = ""
