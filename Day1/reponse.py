@@ -2,7 +2,7 @@ import re
 
 # Day1/Part1
 #Import data from file puzzle.txt in the current directory
-with open('puzzle.txt') as f:
+with open('Day1/puzzle.txt') as f:
     data = f.readlines()
 
 sum = 0
@@ -13,19 +13,19 @@ for line in data:
     for i in range(0,len(line)):
         if line[i].isdigit():
             first_num = int(line[i])
-            print("first_Num : ", first_num)
+            #print("first_Num : ", first_num)
             break
     for i in range(len(line)-1,0,-1):
         if line[i].isdigit():
             last_num = int(line[i])
-            print("last_Num : ",  last_num)
+            #print("last_Num : ",  last_num)
             break
     #check if last_num is empty 
     if last_num == "":
         last_num = first_num
     #concatenate first_num and last_num to make a number
     result = int(str(first_num) + str(last_num))
-    print("result : ", result)
+    #print("result : ", result)
     sum = sum + result
 print("sum : ", sum)
 
@@ -51,17 +51,24 @@ def ConvertToNumeric(value):
 
 sum = 0
 for line in data:
+    first_num = ""
+    last_num = ""
+    result = ""
     # Test the regex pattern
     matches = regex.findall(line)
     # if matches is not a digit convert to numeric
     if not matches[0].isdigit():
-        matches[0] = ConvertToNumeric(matches[0])
+        first_num = ConvertToNumeric(matches[0])
+    else:
+        first_num = matches[0]
     if not matches[-1].isdigit():
-        matches[-1] = ConvertToNumeric(matches[-1])
-    result = int(matches[0] + matches[-1])
+        last_num = ConvertToNumeric(matches[-1])
+    else:
+        last_num = matches[-1]
+    result = int(str(first_num) + str(last_num))
     print("line : ", line)
-    print("matches 0: ", matches[0])
-    print("matches -1: ", matches[-1])
+    print("first_num: ", first_num)
+    print("last_num: ", last_num)
     print("result : ", result)
     sum = sum + result
 print("sum : ", sum)
