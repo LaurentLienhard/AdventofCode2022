@@ -55,8 +55,8 @@ def numConcat(num1, num2):
 
 sum = 0
 for line in data:
-    first_num = ""
-    last_num = ""
+    first_num = 0
+    last_num = 0
     result = 0
     # Test the regex pattern
     matches = regex.findall(line)
