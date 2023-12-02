@@ -1,5 +1,4 @@
 import re
-from webbrowser import get
 
 def getGameNumber(string):
     match = re.search(r'\d+', string)
