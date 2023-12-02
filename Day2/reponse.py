@@ -1,4 +1,7 @@
+from mailbox import NoSuchMailboxError
+from numbers import Number
 import re
+from webbrowser import get
 
 def getGameNumber(string):
     match = re.search(r'\d+', string)
@@ -52,9 +55,33 @@ def Day1Part1():
             sum += GameNumber
     print(sum)
 
+#Day1Part1()
+
+def Day1Part2():
+    with open("Day2/puzzle.txt", "r") as f:
+        data = f.readlines()
+    
+    sum = 0
+    for line in data:
+        #foreach value in getRedGameColor(line): if value is bigger than Redcube, Break
+        NumberOfRedCube = getRedGameColor(line)
+        NumberOfRedCube = list(map(int, NumberOfRedCube))
+        NumberOfRedCube.sort()
+        print("NumberOfRedCube ", NumberOfRedCube[-1])
+
+        NumberOfGreenCube = getGreenGameColor(line)
+        NumberOfGreenCube = list(map(int, NumberOfGreenCube))
+        NumberOfGreenCube.sort()
+        print("NumberOfGreenCube ", NumberOfGreenCube[-1])
 
 
+        NumberOfBlueCube = getBlueGameColor(line)
+        NumberOfBlueCube = list(map(int, NumberOfBlueCube))
+        NumberOfBlueCube.sort()
+        print("NumberOfBlueCube ", NumberOfBlueCube[-1])
 
+        result = int(NumberOfRedCube[-1]) * int(NumberOfGreenCube[-1]) * int(NumberOfBlueCube[-1])
+        sum += result
+    print(sum)
 
-
-Day1Part1()
+Day1Part2()
