@@ -32,6 +32,9 @@ print("sum : ", sum)
 
 
 # Day1/Part2
+with open('Day1/test.txt') as f:
+    data = f.readlines()
+
 arr = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 pattern = "|".join(arr)
 regex = re.compile(pattern)
@@ -76,5 +79,3 @@ for line in data:
     print("result : ", result)
     sum = sum + result
 print("sum : ", sum)
-
-
