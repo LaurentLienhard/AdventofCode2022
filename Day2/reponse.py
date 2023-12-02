@@ -55,7 +55,7 @@ def Day1Part1():
             sum += GameNumber
     print(sum)
 
-#Day1Part1()
+Day1Part1()
 
 def Day1Part2():
     with open("Day2/puzzle.txt", "r") as f:
@@ -67,18 +67,14 @@ def Day1Part2():
         NumberOfRedCube = getRedGameColor(line)
         NumberOfRedCube = list(map(int, NumberOfRedCube))
         NumberOfRedCube.sort()
-        print("NumberOfRedCube ", NumberOfRedCube[-1])
 
         NumberOfGreenCube = getGreenGameColor(line)
         NumberOfGreenCube = list(map(int, NumberOfGreenCube))
         NumberOfGreenCube.sort()
-        print("NumberOfGreenCube ", NumberOfGreenCube[-1])
-
 
         NumberOfBlueCube = getBlueGameColor(line)
         NumberOfBlueCube = list(map(int, NumberOfBlueCube))
         NumberOfBlueCube.sort()
-        print("NumberOfBlueCube ", NumberOfBlueCube[-1])
 
         result = int(NumberOfRedCube[-1]) * int(NumberOfGreenCube[-1]) * int(NumberOfBlueCube[-1])
         sum += result
