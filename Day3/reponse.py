@@ -67,4 +67,7 @@ def check_around(list, coor, coor_colonne):
 
 
 
-Day3part1()
+# Day3part1()
+
+
+def Day3part2():
