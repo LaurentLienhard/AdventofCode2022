@@ -1,5 +1,10 @@
 import re
-
+# 1
+# 1*2 = 2
+# 2*2 = 4
+# 4*2 = 8
+# 8*2  = 16
+# etc ...
 def Day4part1():
     with open("Day4/puzzle.txt", "r") as f:
         data = f.readlines()
